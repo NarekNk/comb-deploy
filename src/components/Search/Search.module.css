@@ -1,0 +1,17 @@
+.searchInput {
+    padding: 10px;
+    width: 20%;
+    border: none;
+}
+
+.searchBtn {
+    color: white;
+    padding: 10px 20px;
+    background-color: lightseagreen;
+    border: none;
+}
+
+.box {
+    padding: 15px;
+    background-color: rgb(144, 225, 238);
+}

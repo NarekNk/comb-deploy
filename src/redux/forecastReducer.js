@@ -1,37 +1,36 @@
 import axios from "axios";
 
 const initState = {
-    currentWeather: {}
+    forecast: {}
 };
 
 
 const API_KEY = "d7ec3205a9f66cec2df36c52244371ef";
 
 
-const SET_CURRENT = "SET_CURRENT";
+const SET_FORECAST = "SET_FORECAST";
 
 const forecastReducer = (state = initState, action) => {
     switch (action.type) {
-        case SET_CURRENT:
-            debugger;
+        case SET_FORECAST:
             return {
                 ...state,
-                currentWeather: action.currentWeather
+                forecast: action.forecast
             }
         default:
             return state;
     }
 }
-const setCurrentWeather = (currentWeather) => ({ type: SET_CURRENT, currentWeather })
 
 const instance = axios.create({
-    baseURL: "http://api.weatherstack.com/",
+    baseURL: "http://api.weatherstack.com/forecast/",
 })
 
-export const getCurrentWeather = (query) => (dispatch) => {
-    instance.get(`current?access_key=${API_KEY}&query=${query}`)
-        .then(res => dispatch(setCurrentWeather(res.current)));
-    // dispatch(setCurrentWeather(curr))
+const setForecast = (forecast) => ({ type: SET_FORECAST, forecast })
+
+export const getForecast = (query = "New York", days = 7) => (dispatch) => {
+    instance.get(`?access_key=${API_KEY}&query=${query}&forecast_days=${days}`)
+        .then(res => dispatch(setForecast(res.data.forecast)));
 }
 
 

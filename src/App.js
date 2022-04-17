@@ -1,6 +1,6 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, HashRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import CurrentWeather from './components/CurrentWeather/CurrentWeather';
 import Exchange from './components/Exchange/Exchange';
@@ -13,7 +13,7 @@ import store from './redux/store';
 
 const App = () => {
   return <Provider store={store}>
-    <BrowserRouter>
+    <HashRouter basename={process.env.PUBLIC_URL}>
       <Search />
       <Routes>
         <Route path='/' element={<Dummy />} />
@@ -22,7 +22,7 @@ const App = () => {
         <Route path='/weather/:query' element={<CurrentWeather />} />
 
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   </Provider>
 }
 

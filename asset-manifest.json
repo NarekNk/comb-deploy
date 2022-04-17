@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/comb-deploy/static/css/main.c12e0e0d.css",
+    "main.js": "/comb-deploy/static/js/main.8074781c.js",
+    "static/js/787.49132870.chunk.js": "/comb-deploy/static/js/787.49132870.chunk.js",
+    "index.html": "/comb-deploy/index.html",
+    "main.c12e0e0d.css.map": "/comb-deploy/static/css/main.c12e0e0d.css.map",
+    "main.8074781c.js.map": "/comb-deploy/static/js/main.8074781c.js.map",
+    "787.49132870.chunk.js.map": "/comb-deploy/static/js/787.49132870.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c12e0e0d.css",
+    "static/js/main.8074781c.js"
+  ]
+}

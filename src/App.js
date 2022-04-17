@@ -4,16 +4,14 @@ import { BrowserRouter, HashRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import CurrentWeather from './components/CurrentWeather/CurrentWeather';
 import Exchange from './components/Exchange/Exchange';
-import Forecast from './components/Forecast/Forecast';
 import Search from './components/Search/Search';
 import Tenzies from './components/Tenzies/Tenzies';
-import currentReducer from './redux/currentReducer';
 import store from './redux/store';
 
 
 const App = () => {
   return <Provider store={store}>
-    <HashRouter basename={process.env.PUBLIC_URL}>
+    <HashRouter>
       <Search />
       <Routes>
         <Route path='/' element={<Dummy />} />

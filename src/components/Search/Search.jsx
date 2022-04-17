@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import CurrentWeather from './../CurrentWeather/CurrentWeather';
 import { getCurrentWeather } from '../../redux/currentReducer';
 import styles from "./Search.module.css"
+import { Link } from 'react-router-dom';
 
 
 const Search = ({ getCurrentWeather }) => {
@@ -33,15 +34,23 @@ const Search = ({ getCurrentWeather }) => {
 
     return (
         <div className={styles.box}>
-            <input
-                type="text"
-                onChange={(e) => setValue(e.target.value)}
-                value={value}
-                className={styles.searchInput}
-                onKeyDown={ enterSearch }></input>
-            <button onClick={submitSearch} className={styles.searchBtn}>Search</button>
-
-            { done && <CurrentWeather/>}
+            <nav>
+                <ul>
+                    <Link to={"/"}><li>Home</li></Link>
+                    <Link to={"/tenzies"}><li>Tenzies</li></Link>
+                    <Link to={"/exchange"}><li>Exchange</li></Link>
+                </ul>
+            </nav>
+            <div className={styles.form}>
+                <input
+                    type="text"
+                    onChange={(e) => setValue(e.target.value)}
+                    value={value}
+                    placeholder="City name"
+                    className={styles.searchInput}
+                    onKeyDown={enterSearch}/>
+                    <button onClick={submitSearch} className={styles.searchBtn}><Link to={`/weather/${value}`}>Search</Link></button>                
+            </div>
         </div>
     );
 }

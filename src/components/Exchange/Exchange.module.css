@@ -1,0 +1,45 @@
+.cont {
+    margin: 50px auto;
+    width: 350px;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 30px;
+    background-color: aquamarine;
+
+
+    display: flex;
+    flex-direction: column;
+}
+
+.sellDiv {
+    width: 60%;
+}
+
+.header {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.sell {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 10px;
+    background-color: aqua;
+}
+
+.inp {
+    padding: 10px;
+    border: none;
+    font-size: 16px;
+    background-color: transparent;
+}
+
+.btn {
+    padding: 5px;
+    margin-left: 15px;
+}

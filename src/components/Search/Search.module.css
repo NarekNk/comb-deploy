@@ -1,6 +1,20 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.form {
+    background-color: aliceblue;
+    padding: 0;
+    width: max-content;
+    display: flex;
+    justify-content: space-between;
+}
+
 .searchInput {
+    width: 70%;
     padding: 10px;
-    width: 20%;
     border: none;
 }
 
@@ -12,6 +26,27 @@
 }
 
 .box {
-    padding: 15px;
+    padding: 10px;
     background-color: rgb(144, 225, 238);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+li {
+    margin: 10px;
+    padding: 5px 10px;
+    background-color: lightseagreen;
+}
+
+a {
+    color: white;
+    text-decoration: none;
 }

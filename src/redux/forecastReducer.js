@@ -4,9 +4,8 @@ const initState = {
     forecast: {}
 };
 
-
 const API_KEY = "d7ec3205a9f66cec2df36c52244371ef";
-
+// const API_KEY = process.env.API_KEY;
 
 const SET_FORECAST = "SET_FORECAST";
 
@@ -23,7 +22,7 @@ const forecastReducer = (state = initState, action) => {
 }
 
 const instance = axios.create({
-    baseURL: "http://api.weatherstack.com/forecast/",
+    baseURL: "https://api.weatherstack.com/forecast/",
 })
 
 const setForecast = (forecast) => ({ type: SET_FORECAST, forecast })

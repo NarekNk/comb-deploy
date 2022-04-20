@@ -10,9 +10,10 @@ const CurrentWeather = ({ currentWeather, location }) => {
         )
     };
     if (Object.keys(currentWeather).length) {
-        descriptions = currentWeather.weather_descriptions.map(i => <p key={i}>{i}</p>);
+        // descriptions = currentWeather.weather_descriptions.map(i => <p key={i}>{i}</p>);
+        
     }
-
+    console.log(currentWeather)
     return (
         <div className={styles.tab}>
             <p>{location.country}</p>
@@ -23,7 +24,9 @@ const CurrentWeather = ({ currentWeather, location }) => {
                 <p><b>{currentWeather.temperature} °C</b></p>
             </div>
 
-            {descriptions}
+            {/* {descriptions} */}
+            {currentWeather[0].description}
+            {currentWeather[0].main}
             <p>Wind speed : {currentWeather.wind_speed} mph</p>
         </div>
     )
@@ -32,7 +35,6 @@ const CurrentWeather = ({ currentWeather, location }) => {
 
 
 const mapStateToProps = (state) => {
-    // debugger;
     return {
         currentWeather: state.currentReducer.currentWeather,
         location: state.currentReducer.location

@@ -43,5 +43,14 @@ export const getCurrentWeather = (query) => (dispatch) => {
         });
 }
 
+export const getCurrentWeatherRapid = (query) => (dispatch) => {
+    axios.get(`https://community-open-weather-map.p.rapidapi.com/weather?q=${query}`, {
+        headers: {
+            'X-RapidAPI-Host': 'community-open-weather-map.p.rapidapi.com',
+            'X-RapidAPI-Key': '6811750e56msh6c12021cfc50101p1f5871jsn61052f6c881e'
+          }
+    }).then(response => dispatch(setCurrentWeather(response.data.weather)));
+}
+
 
 export default currentReducer;

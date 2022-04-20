@@ -6,6 +6,7 @@ import CurrentWeather from './components/CurrentWeather/CurrentWeather';
 import Exchange from './components/Exchange/Exchange';
 import Search from './components/Search/Search';
 import Tenzies from './components/Tenzies/Tenzies';
+import Calendar from './components/calendar/calendar';
 import store from './redux/store';
 
 
@@ -17,6 +18,7 @@ const App = () => {
         <Route path='/' element={<Dummy />} />
         <Route path='/tenzies' element={<Tenzies />} />
         <Route path='/exchange' element={<Exchange />} />
+        <Route path='/calendar' element={<Calendar />} />
         <Route path='/weather/:query' element={<CurrentWeather />} />
 
       </Routes>

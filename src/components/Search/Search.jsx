@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import CurrentWeather from './../CurrentWeather/CurrentWeather';
-import { getCurrentWeather } from '../../redux/currentReducer';
+import { getCurrentWeather, getCurrentWeatherRapid } from '../../redux/currentReducer';
 import styles from "./Search.module.css"
 import { Link } from 'react-router-dom';
 
 
-const Search = ({ getCurrentWeather }) => {
+const Search = ({ getCurrentWeather, getCurrentWeatherRapid }) => {
 
     const [value, setValue] = useState("");
     const [query, setQuery] = useState("");
@@ -27,7 +27,8 @@ const Search = ({ getCurrentWeather }) => {
 
     useEffect(() => {
         if (query !== "") {
-            getCurrentWeather(query);
+            // getCurrentWeather(query);
+            getCurrentWeatherRapid(query)
             setDone(true)
         }
     }, [query, getCurrentWeather])
@@ -39,6 +40,7 @@ const Search = ({ getCurrentWeather }) => {
                     <Link to={"/"}><li>Home</li></Link>
                     <Link to={"/tenzies"}><li>Tenzies</li></Link>
                     <Link to={"/exchange"}><li>Exchange</li></Link>
+                    <Link to={"/calendar"}><li>Calendar</li></Link>
                 </ul>
             </nav>
             <div className={styles.form}>
@@ -56,4 +58,4 @@ const Search = ({ getCurrentWeather }) => {
 }
 
 
-export default connect(null, { getCurrentWeather })(Search);
+export default connect(null, { getCurrentWeather, getCurrentWeatherRapid })(Search);
